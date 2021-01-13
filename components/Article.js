@@ -166,6 +166,23 @@ data.push({
   thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
 });
   
+    
+data.push({
+  title: "Lambda Racoon",
+  date: "January 13th 2020",
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer eu enim et eros posuere consequat id in libero.Aliquam pellentesque pulvinar aliquet.`,
+  secondParagraph: `Curabitur sollicitudin sagittis consequat. In lobortis semper lacus et aliquet. Morbi luctus, tellus et imperdiet iaculis, ante eros sodales leo, in rutrum odio nunc at mi.`,
+  thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
+});
+
+data.push({
+  title: "White Pomegranite",
+  date: "January 13th 2020",
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer eu enim et eros posuere consequat id in libero.Aliquam pellentesque pulvinar aliquet.`,
+  secondParagraph: `Curabitur sollicitudin sagittis consequat. In lobortis semper lacus et aliquet. Morbi luctus, tellus et imperdiet iaculis, ante eros sodales leo, in rutrum odio nunc at mi.`,
+  thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
+});
+
 data.forEach((item) => {
   let aElement = articleMaker(item);
   let articles = document.querySelector(".articles");
