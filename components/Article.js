@@ -90,7 +90,7 @@ const data = [
 ];
 
 /*
-  Step 1: Write a component called 'articleMaker' to create an article.
+    Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
 
@@ -103,7 +103,7 @@ const data = [
     <span class="expandButton">+</span>
   </div>
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+    Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
   Step 3: Don't forget to return something from your function!
@@ -114,3 +114,77 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+  
+function articleMaker(article) {
+
+  const aDiv = document.createElement("div");
+  aDiv.classList.add("article");
+
+  const aTitle = document.createElement("h2");
+  aTitle.textContent = article.title;
+  aDiv.appendChild(aTitle);
+ 
+
+  const aDate = document.createElement("p");
+  aDate.textContent = article.date;
+   aDiv.appendChild(aDate);
+
+  const aPara1 = document.createElement("p");
+  aPara1.textContent = article.firstParagraph;
+  aDiv.appendChild(aPara1);
+
+  const aPara2 = document.createElement("p");
+  aPara2.textContent = article.secondParagraph;
+  aDiv.appendChild(aPara2);
+  
+  const aPara3 = document.createElement("p");
+  aPara3.textContent = article.thirdParagraph;
+  aDiv.appendChild(aPara3);
+  
+  const expandBtn = document.createElement("expandButton");
+  expandBtn.classList.add("expandBtn");
+  expandBtn.textContent = "";
+  aDiv.appendChild(expandBtn);
+
+     // (ADDING EVENT LISTENER)
+  expandBtn.addEventListener("click", () => {
+    aDiv.classList.toggle("article-open");
+   
+  });
+
+  return aDiv;
+  
+}
+    
+data.push({
+  title: "Tasmanian Devil",
+  date: "January 13th 2020",
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer eu enim et eros posuere consequat id in libero.Aliquam pellentesque pulvinar aliquet.`,
+  secondParagraph: `Curabitur sollicitudin sagittis consequat. In lobortis semper lacus et aliquet. Morbi luctus, tellus et imperdiet iaculis, ante eros sodales leo, in rutrum odio nunc at mi.`,
+  thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
+});
+  
+    
+data.push({
+  title: "Lambda Racoon",
+  date: "January 13th 2020",
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer eu enim et eros posuere consequat id in libero.Aliquam pellentesque pulvinar aliquet.`,
+  secondParagraph: `Curabitur sollicitudin sagittis consequat. In lobortis semper lacus et aliquet. Morbi luctus, tellus et imperdiet iaculis, ante eros sodales leo, in rutrum odio nunc at mi.`,
+  thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
+});
+
+data.push({
+  title: "White Pomegranite",
+  date: "January 13th 2020",
+  firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer eu enim et eros posuere consequat id in libero.Aliquam pellentesque pulvinar aliquet.`,
+  secondParagraph: `Curabitur sollicitudin sagittis consequat. In lobortis semper lacus et aliquet. Morbi luctus, tellus et imperdiet iaculis, ante eros sodales leo, in rutrum odio nunc at mi.`,
+  thirdParagraph: `Donec ac risus eu lorem vehicula sodales lacinia tempor ipsum. Curabitur sit amet quam leo. Donec faucibus posuere libero, a tincidunt elit auctor vitae.`
+});
+
+data.forEach((item) => {
+  let aElement = articleMaker(item);
+  let articles = document.querySelector(".articles");
+  articles.appendChild(aElement);
+});
